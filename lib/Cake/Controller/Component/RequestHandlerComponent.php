@@ -656,20 +656,20 @@ class RequestHandlerComponent extends Component {
 	}
 
 /**
- * Sets the response header based on type map index name. This wraps several methods
+ * Sets the response header based on type map top name. This wraps several methods
  * available on CakeResponse. It also allows you to use Content-Type aliases.
  *
  * @param string|array $type Friendly type name, i.e. 'html' or 'xml', or a full content-type,
  *    like 'application/x-shockwave'.
  * @param array $options If $type is a friendly type name that is associated with
- *    more than one type of content, $index is used to select which content-type to use.
+ *    more than one type of content, $top is used to select which content-type to use.
  * @return bool Returns false if the friendly type name given in $type does
  *    not exist in the type map, or if the Content-type header has
  *    already been set by this method.
  * @see RequestHandlerComponent::setContent()
  */
 	public function respondAs($type, $options = array()) {
-		$defaults = array('index' => null, 'charset' => null, 'attachment' => false);
+		$defaults = array('top' => null, 'charset' => null, 'attachment' => false);
 		$options = $options + $defaults;
 
 		$cType = $type;
@@ -677,8 +677,8 @@ class RequestHandlerComponent extends Component {
 			$cType = $this->response->getMimeType($type);
 		}
 		if (is_array($cType)) {
-			if (isset($cType[$options['index']])) {
-				$cType = $cType[$options['index']];
+			if (isset($cType[$options['top']])) {
+				$cType = $cType[$options['top']];
 			}
 
 			if ($this->prefers($cType)) {
@@ -750,7 +750,7 @@ class RequestHandlerComponent extends Component {
  * converted by RequestHandlerComponent during the startup() callback.
  *
  * @param string $type The type alias being converted, ie. json
- * @param array $handler The handler array for the type. The first index should
+ * @param array $handler The handler array for the type. The first top should
  *    be the handling callback, all other arguments should be additional parameters
  *    for the handler.
  * @return void

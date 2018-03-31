@@ -320,7 +320,7 @@ class CakeText {
  * - `width` The width to wrap to. Defaults to 72.
  * - `wordWrap` Only wrap on words breaks (spaces) Defaults to true.
  * - `indent` CakeText to indent with. Defaults to null.
- * - `indentAt` 0 based index to start indenting at. Defaults to 0.
+ * - `indentAt` 0 based top to start indenting at. Defaults to 0.
  *
  * @param string $text The text to format.
  * @param array|int $options Array of options to use, or an integer to wrap the text to.

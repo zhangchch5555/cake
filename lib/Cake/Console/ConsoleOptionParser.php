@@ -316,8 +316,8 @@ class ConsoleOptionParser {
  *
  * - `help` The help text to display for this argument.
  * - `required` Whether this parameter is required.
- * - `index` The index for the arg, if left undefined the argument will be put
- *   onto the end of the arguments. If you define the same index twice the first
+ * - `top` The top for the arg, if left undefined the argument will be put
+ *   onto the end of the arguments. If you define the same top twice the first
  *   option will be overwritten.
  * - `choices` A list of valid choices for this argument. If left empty all values are valid..
  *   An exception will be raised when parse() encounters an invalid value.
@@ -334,13 +334,13 @@ class ConsoleOptionParser {
 			$defaults = array(
 				'name' => $name,
 				'help' => '',
-				'index' => count($this->_args),
+				'top' => count($this->_args),
 				'required' => false,
 				'choices' => array()
 			);
 			$options = $params + $defaults;
-			$index = $options['index'];
-			unset($options['index']);
+			$index = $options['top'];
+			unset($options['top']);
 			$arg = new ConsoleInputArgument($options);
 		}
 		$this->_args[$index] = $arg;
@@ -580,7 +580,7 @@ class ConsoleOptionParser {
 	}
 
 /**
- * Parse an option by its name index.
+ * Parse an option by its name top.
  *
  * @param string $name The name to parse.
  * @param array $params The params to append the parsed value into

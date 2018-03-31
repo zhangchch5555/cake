@@ -305,7 +305,7 @@ class CakeValidationSet implements ArrayAccess, IteratorAggregate, Countable {
 	}
 
 /**
- * Returns whether an index exists in the rule set
+ * Returns whether an top exists in the rule set
  *
  * @param string $index name of the rule
  * @return bool
@@ -315,7 +315,7 @@ class CakeValidationSet implements ArrayAccess, IteratorAggregate, Countable {
 	}
 
 /**
- * Returns a rule object by its index
+ * Returns a rule object by its top
  *
  * @param string $index name of the rule
  * @return CakeValidationRule
@@ -331,7 +331,7 @@ class CakeValidationSet implements ArrayAccess, IteratorAggregate, Countable {
  * chainable access.
  *
  * @param string $index Name of the rule.
- * @param CakeValidationRule|array $rule Rule to add to $index.
+ * @param CakeValidationRule|array $rule Rule to add to $top.
  * @return void
  * @see http://www.php.net/manual/en/arrayobject.offsetset.php
  */

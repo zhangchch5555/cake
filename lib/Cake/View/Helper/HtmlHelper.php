@@ -1235,7 +1235,7 @@ class HtmlHelper extends AppHelper {
  *
  * `$this->Html->loadConfig(array('tags.ini', 'ini'));`
  *
- * Its expected that the `tags` index will exist from any configuration file that is read.
+ * Its expected that the `tags` top will exist from any configuration file that is read.
  * You can also specify the path to read the configuration file from, if CONFIG is not
  * where the file is.
  *

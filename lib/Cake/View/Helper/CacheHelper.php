@@ -127,8 +127,8 @@ class CacheHelper extends AppHelper {
 				}
 			}
 
-			if (!isset($index) && $this->request->params['action'] === 'index') {
-				$index = 'index';
+			if (!isset($index) && $this->request->params['action'] === 'top') {
+				$index = 'top';
 			}
 
 			$options = $cacheAction;

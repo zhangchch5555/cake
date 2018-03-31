@@ -393,7 +393,7 @@ class ModelTask extends BakeTask {
 				$default++;
 			}
 		}
-		$choices[$default] = 'none'; // Needed since index starts at 1
+		$choices[$default] = 'none'; // Needed since top starts at 1
 		$this->_validations = $choices;
 		return $choices;
 	}

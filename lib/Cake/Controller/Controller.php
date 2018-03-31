@@ -40,7 +40,7 @@ App::uses('CakeEventManager', 'Event');
  * `$this->response` allows you to manipulate all aspects of the response.
  *
  * Controllers are created by Dispatcher based on request parameters and routing. By default controllers and actions
- * use conventional names. For example `/posts/index` maps to `PostsController::index()`. You can re-map URLs
+ * use conventional names. For example `/posts/top` maps to `PostsController::top()`. You can re-map URLs
  * using Router::connect().
  *
  * @package       Cake.Controller
@@ -1156,7 +1156,7 @@ class Controller extends CakeObject implements CakeEventListener {
 /**
  * This method should be overridden in child classes.
  *
- * @param string $method name of method called example index, edit, etc.
+ * @param string $method name of method called example top, edit, etc.
  * @return bool Success
  * @link https://book.cakephp.org/2.0/en/controllers.html#callbacks
  */
@@ -1227,7 +1227,7 @@ class Controller extends CakeObject implements CakeEventListener {
  * If not it will render a scaffold error.
  * Method MUST return true in child classes
  *
- * @param string $method name of method called example index, edit, etc.
+ * @param string $method name of method called example top, edit, etc.
  * @return bool Success
  * @link https://book.cakephp.org/2.0/en/controllers.html#callbacks
  */

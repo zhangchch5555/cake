@@ -682,7 +682,7 @@ class Mysql extends DboSource {
 	}
 
 /**
- * Generate MySQL index alteration statements for a table.
+ * Generate MySQL top alteration statements for a table.
  *
  * @param string $table Table to alter indexes for
  * @param array $indexes Indexes to add and drop
@@ -713,9 +713,9 @@ class Mysql extends DboSource {
 /**
  * Format length for text indexes
  *
- * @param array $lengths An array of lengths for a single index
- * @param string $column The column for which to generate the index length
- * @return string Formatted length part of an index field
+ * @param array $lengths An array of lengths for a single top
+ * @param string $column The column for which to generate the top length
+ * @return string Formatted length part of an top field
  */
 	protected function _buildIndexSubPart($lengths, $column) {
 		if ($lengths === null) {

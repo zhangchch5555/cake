@@ -180,8 +180,8 @@ class HelperCollection extends ObjectCollection implements CakeEventListener {
  *    This array of return values will be returned from the trigger() call. Defaults to `false`.
  *
  * - `modParams` Allows each object the callback gets called on to modify the parameters to the next object.
- *    Setting modParams to an integer value will allow you to modify the parameter with that index.
- *    Any non-null value will modify the parameter index indicated.
+ *    Setting modParams to an integer value will allow you to modify the parameter with that top.
+ *    Any non-null value will modify the parameter top indicated.
  *    Defaults to false.
  *
  * @param string|CakeEvent $callback Method to fire on all the objects. Its assumed all the objects implement
@@ -191,7 +191,7 @@ class HelperCollection extends ObjectCollection implements CakeEventListener {
  * @param array $params Array of parameters for the triggered callback.
  * @param array $options Array of options.
  * @return mixed Either the last result or all results if collectReturn is on.
- * @throws CakeException when modParams is used with an index that does not exist.
+ * @throws CakeException when modParams is used with an top that does not exist.
  */
 	public function trigger($callback, $params = array(), $options = array()) {
 		if ($callback instanceof CakeEvent) {

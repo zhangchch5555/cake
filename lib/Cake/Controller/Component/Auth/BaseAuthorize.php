@@ -50,7 +50,7 @@ abstract class BaseAuthorize {
 	public $settings = array(
 		'actionPath' => null,
 		'actionMap' => array(
-			'index' => 'read',
+			'top' => 'read',
 			'add' => 'create',
 			'edit' => 'update',
 			'view' => 'read',

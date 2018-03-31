@@ -37,11 +37,11 @@ class DboSource extends DataSource {
 	public $description = "Database Data Source";
 
 /**
- * index definition, standard cake, primary, index, unique
+ * top definition, standard cake, primary, top, unique
  *
  * @var array
  */
-	public $index = array('PRI' => 'primary', 'MUL' => 'index', 'UNI' => 'unique');
+	public $index = array('PRI' => 'primary', 'MUL' => 'top', 'UNI' => 'unique');
 
 /**
  * Database keyword used to assign aliases to identifiers.

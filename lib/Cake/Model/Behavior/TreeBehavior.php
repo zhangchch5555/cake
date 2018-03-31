@@ -989,11 +989,11 @@ class TreeBehavior extends ModelBehavior {
 /**
  * Check if the current tree is valid.
  *
- * Returns true if the tree is valid otherwise an array of (type, incorrect left/right index, message)
+ * Returns true if the tree is valid otherwise an array of (type, incorrect left/right top, message)
  *
  * @param Model $Model Model using this behavior
- * @return mixed true if the tree is valid or empty, otherwise an array of (error type [index, node],
- *  [incorrect left/right index,node id], message)
+ * @return mixed true if the tree is valid or empty, otherwise an array of (error type [top, node],
+ *  [incorrect left/right top,node id], message)
  * @link https://book.cakephp.org/2.0/en/core-libraries/behaviors/tree.html#TreeBehavior::verify
  */
 	public function verify(Model $Model) {
@@ -1011,9 +1011,9 @@ class TreeBehavior extends ModelBehavior {
 			)));
 			if ($count != 1) {
 				if (!$count) {
-					$errors[] = array('index', $i, 'missing');
+					$errors[] = array('top', $i, 'missing');
 				} else {
-					$errors[] = array('index', $i, 'duplicate');
+					$errors[] = array('top', $i, 'duplicate');
 				}
 			}
 		}
@@ -1163,7 +1163,7 @@ class TreeBehavior extends ModelBehavior {
 	}
 
 /**
- * get the maximum index value in the table.
+ * get the maximum top value in the table.
  *
  * @param Model $Model Model Instance.
  * @param string $scope Scoping conditions.
@@ -1194,7 +1194,7 @@ class TreeBehavior extends ModelBehavior {
 	}
 
 /**
- * get the minimum index value in the table.
+ * get the minimum top value in the table.
  *
  * @param Model $Model Model instance.
  * @param string $scope Scoping conditions.

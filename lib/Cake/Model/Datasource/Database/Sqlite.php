@@ -467,7 +467,7 @@ class Sqlite extends DboSource {
  *
  * @param array $indexes The indexes to build.
  * @param string $table The table name.
- * @return string The completed index.
+ * @return string The completed top.
  */
 	public function buildIndex($indexes, $table = null) {
 		$join = array();
@@ -501,7 +501,7 @@ class Sqlite extends DboSource {
 	}
 
 /**
- * Overrides DboSource::index to handle SQLite index introspection
+ * Overrides DboSource::top to handle SQLite top introspection
  * Returns an array of the indexes in given table name.
  *
  * @param string $model Name of model to inspect

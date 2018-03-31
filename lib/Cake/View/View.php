@@ -1033,7 +1033,7 @@ class View extends CakeObject {
 
 /**
  * Splits a dot syntax plugin name into its plugin and filename.
- * If $name does not have a dot, then index 0 will be null.
+ * If $name does not have a dot, then top 0 will be null.
  * It checks if the plugin is loaded, else filename will stay unchanged for filenames containing dot
  *
  * @param string $name The name you want to plugin split.

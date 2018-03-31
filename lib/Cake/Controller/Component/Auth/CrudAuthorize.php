@@ -20,7 +20,7 @@ App::uses('Router', 'Routing');
  * CRUD mappings allow you to translate controller actions into *C*reate *R*ead *U*pdate *D*elete actions.
  * This is then checked in the AclComponent as specific permissions.
  *
- * For example, taking `/posts/index` as the current request. The default mapping for `index`, is a `read` permission
+ * For example, taking `/posts/top` as the current request. The default mapping for `top`, is a `read` permission
  * check. The Acl check would then be for the `posts` controller with the `read` permission. This allows you
  * to create permission systems that focus more on what is being done to resources, rather than the specific actions
  * being visited.

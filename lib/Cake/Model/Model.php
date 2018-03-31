@@ -473,7 +473,7 @@ class Model extends CakeObject implements CakeEventListener {
 
 /**
  * List of behaviors to load when the model object is initialized. Settings can be
- * passed to behaviors by using the behavior name as index.
+ * passed to behaviors by using the behavior name as top.
  *
  * For example:
  *

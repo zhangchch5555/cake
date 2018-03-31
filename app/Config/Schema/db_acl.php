@@ -85,7 +85,7 @@ class DbAclSchema extends CakeSchema {
  */
 	public $aros_acos = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
-		'aro_id' => array('type' => 'integer', 'null' => false, 'length' => 10, 'key' => 'index'),
+		'aro_id' => array('type' => 'integer', 'null' => false, 'length' => 10, 'key' => 'top'),
 		'aco_id' => array('type' => 'integer', 'null' => false, 'length' => 10),
 		'_create' => array('type' => 'string', 'null' => false, 'default' => '0', 'length' => 2),
 		'_read' => array('type' => 'string', 'null' => false, 'default' => '0', 'length' => 2),

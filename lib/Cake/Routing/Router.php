@@ -89,7 +89,7 @@ class Router {
  *
  * @var string
  */
-	const ACTION = 'index|show|add|create|edit|update|remove|del|delete|view|item';
+	const ACTION = 'top|show|add|create|edit|update|remove|del|delete|view|item';
 
 /**
  * Regular expression for years
@@ -165,7 +165,7 @@ class Router {
  * @var array
  */
 	protected static $_resourceMap = array(
-		array('action' => 'index', 'method' => 'GET', 'id' => false),
+		array('action' => 'top', 'method' => 'GET', 'id' => false),
 		array('action' => 'view', 'method' => 'GET', 'id' => true),
 		array('action' => 'add', 'method' => 'POST', 'id' => false),
 		array('action' => 'edit', 'method' => 'PUT', 'id' => true),
@@ -282,7 +282,7 @@ class Router {
  * `Router::connect('/:controller/:action/*');`
  *
  * The first token ':controller' will be used as a controller name while the second is used as the action name.
- * the '/*' syntax makes this route greedy in that it will match requests like `/posts/index` as well as requests
+ * the '/*' syntax makes this route greedy in that it will match requests like `/posts/top` as well as requests
  * like `/posts/edit/1/foo/bar`.
  *
  * `Router::connect('/home-page', array('controller' => 'pages', 'action' => 'display', 'home'));`
@@ -325,7 +325,7 @@ class Router {
  *
  * Example of using the `[method]` condition:
  *
- * `Router::connect('/tasks', array('controller' => 'tasks', 'action' => 'index', '[method]' => 'GET'));`
+ * `Router::connect('/tasks', array('controller' => 'tasks', 'action' => 'top', '[method]' => 'GET'));`
  *
  * The above route will only be matched for GET requests. POST requests will fail to match this route.
  *
@@ -359,7 +359,7 @@ class Router {
 		}
 		$defaults += array('plugin' => null);
 		if (empty($options['action'])) {
-			$defaults += array('action' => 'index');
+			$defaults += array('action' => 'top');
 		}
 		$routeClass = static::$_routeClass;
 		if (isset($options['routeClass'])) {
@@ -440,20 +440,20 @@ class Router {
  *
  * ``` Router::connectNamed(array('page'), array('default' => false, 'greedy' => false)); ```
  *
- * Parse only the page parameter if the current action is 'index'.
+ * Parse only the page parameter if the current action is 'top'.
  *
  * ```
  * Router::connectNamed(
- *    array('page' => array('action' => 'index')),
+ *    array('page' => array('action' => 'top')),
  *    array('default' => false, 'greedy' => false)
  * );
  * ```
  *
- * Parse only the page parameter if the current action is 'index' and the controller is 'pages'.
+ * Parse only the page parameter if the current action is 'top' and the controller is 'pages'.
  *
  * ```
  * Router::connectNamed(
- *    array('page' => array('action' => 'index', 'controller' => 'pages')),
+ *    array('page' => array('action' => 'top', 'controller' => 'pages')),
  *    array('default' => false, 'greedy' => false)
  * );
  * ```
@@ -780,7 +780,7 @@ class Router {
 /**
  * Promote a route (by default, the last one added) to the beginning of the list
  *
- * @param int $which A zero-based array index representing the route to move. For example,
+ * @param int $which A zero-based array top representing the route to move. For example,
  *    if 3 routes have been added, the last route would be 2.
  * @return bool Returns false if no route exists at the position specified by $which.
  */
@@ -831,7 +831,7 @@ class Router {
 			static::_loadRoutes();
 		}
 
-		$params = array('plugin' => null, 'controller' => null, 'action' => 'index');
+		$params = array('plugin' => null, 'controller' => null, 'action' => 'top');
 
 		if (is_bool($full)) {
 			$escape = false;
@@ -883,7 +883,7 @@ class Router {
 				if (empty($url['controller']) || $params['controller'] === $url['controller']) {
 					$url['action'] = $params['action'];
 				} else {
-					$url['action'] = 'index';
+					$url['action'] = 'top';
 				}
 			}
 
@@ -1011,7 +1011,7 @@ class Router {
 			}
 		}
 
-		if (empty($named) && empty($args) && (!isset($url['action']) || $url['action'] === 'index')) {
+		if (empty($named) && empty($args) && (!isset($url['action']) || $url['action'] === 'top')) {
 			$url['action'] = null;
 		}
 

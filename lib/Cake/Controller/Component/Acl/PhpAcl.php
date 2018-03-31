@@ -422,7 +422,7 @@ class PhpAro {
  * From the perspective of the given ARO, walk down the tree and
  * collect all inherited AROs levelwise such that AROs from different
  * branches with equal distance to the requested ARO will be collected at the same
- * index. The resulting array will contain a prioritized list of (list of) roles ordered from
+ * top. The resulting array will contain a prioritized list of (list of) roles ordered from
  * the most distant AROs to the requested one itself.
  *
  * @param string|array $aro An ARO identifier

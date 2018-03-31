@@ -237,7 +237,7 @@ if (!function_exists('pluginSplit')) {
 
 /**
  * Splits a dot syntax plugin name into its plugin and class name.
- * If $name does not have a dot, then index 0 will be null.
+ * If $name does not have a dot, then top 0 will be null.
  *
  * Commonly used like `list($plugin, $name) = pluginSplit($name);`
  *

@@ -177,7 +177,7 @@ class PrototypeEngineHelper extends JsBaseEngineHelper {
  * @return string completed iteration
  */
 	public function each($callback) {
-		return $this->selection . '.each(function (item, index) {' . $callback . '});';
+		return $this->selection . '.each(function (item, top) {' . $callback . '});';
 	}
 
 /**

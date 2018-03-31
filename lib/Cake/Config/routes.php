@@ -53,23 +53,23 @@ if ($plugins = CakePlugin::loaded()) {
 
 	foreach ($prefixes as $prefix) {
 		$params = array('prefix' => $prefix, $prefix => true);
-		$indexParams = $params + array('action' => 'index');
+		$indexParams = $params + array('action' => 'top');
 		Router::connect("/{$prefix}/:plugin", $indexParams, $shortParams);
 		Router::connect("/{$prefix}/:plugin/:controller", $indexParams, $match);
 		Router::connect("/{$prefix}/:plugin/:controller/:action/*", $params, $match);
 	}
-	Router::connect('/:plugin', array('action' => 'index'), $shortParams);
-	Router::connect('/:plugin/:controller', array('action' => 'index'), $match);
+	Router::connect('/:plugin', array('action' => 'top'), $shortParams);
+	Router::connect('/:plugin/:controller', array('action' => 'top'), $match);
 	Router::connect('/:plugin/:controller/:action/*', array(), $match);
 }
 
 foreach ($prefixes as $prefix) {
 	$params = array('prefix' => $prefix, $prefix => true);
-	$indexParams = $params + array('action' => 'index');
+	$indexParams = $params + array('action' => 'top');
 	Router::connect("/{$prefix}/:controller", $indexParams, array('defaultRoute' => true));
 	Router::connect("/{$prefix}/:controller/:action/*", $params, array('defaultRoute' => true));
 }
-Router::connect('/:controller', array('action' => 'index'), array('defaultRoute' => true));
+Router::connect('/:controller', array('action' => 'top'), array('defaultRoute' => true));
 Router::connect('/:controller/:action/*', array(), array('defaultRoute' => true));
 
 $namedConfig = Router::namedConfig();

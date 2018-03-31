@@ -132,7 +132,7 @@ class ServerShell extends AppShell {
 			$this->_host,
 			$this->_port,
 			escapeshellarg($this->_documentRoot),
-			escapeshellarg($this->_documentRoot . '/index.php')
+			escapeshellarg($this->_documentRoot . '/top.php')
 		);
 
 		$port = ($this->_port == static::DEFAULT_PORT) ? '' : ':' . $this->_port;

@@ -112,7 +112,7 @@ class Scaffold {
 			$this->{$var} = $controller->{$var};
 		}
 
-		$this->redirect = array('action' => 'index');
+		$this->redirect = array('action' => 'top');
 
 		$this->modelClass = $controller->modelClass;
 		$this->modelKey = $controller->modelKey;
@@ -179,19 +179,19 @@ class Scaffold {
 	}
 
 /**
- * Renders index action of scaffolded model.
+ * Renders top action of scaffolded model.
  *
  * @param array $params Parameters for scaffolding
  * @return mixed A rendered view listing rows from Models database table
  */
 	protected function _scaffoldIndex($params) {
-		if ($this->controller->beforeScaffold('index')) {
+		if ($this->controller->beforeScaffold('top')) {
 			$this->ScaffoldModel->recursive = 0;
 			$this->controller->set(
 				Inflector::variable($this->controller->name), $this->controller->paginate()
 			);
 			$this->controller->render($this->request['action'], $this->layout);
-		} elseif ($this->controller->scaffoldError('index') === false) {
+		} elseif ($this->controller->scaffoldError('top') === false) {
 			return $this->_scaffoldError();
 		}
 	}
@@ -361,7 +361,7 @@ class Scaffold {
 		if (isset($db)) {
 			if (empty($this->scaffoldActions)) {
 				$this->scaffoldActions = array(
-					'index', 'list', 'view', 'add', 'create', 'edit', 'update', 'delete'
+					'top', 'list', 'view', 'add', 'create', 'edit', 'update', 'delete'
 				);
 			} elseif (!empty($prefixes) && in_array($scaffoldPrefix, $prefixes)) {
 				$this->scaffoldActions = array(
@@ -381,7 +381,7 @@ class Scaffold {
 					$request->params['action'] = str_replace($scaffoldPrefix . '_', '', $request->params['action']);
 				}
 				switch ($request->params['action']) {
-					case 'index':
+					case 'top':
 					case 'list':
 						$this->_scaffoldIndex($request);
 						break;

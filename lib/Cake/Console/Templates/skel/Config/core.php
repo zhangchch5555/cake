@@ -136,8 +136,8 @@
  * 	Routing.prefixes = array('admin', 'manager');
  *
  * Enables:
- *	`admin_index()` and `/admin/controller/index`
- *	`manager_index()` and `/manager/controller/index`
+ *	`admin_index()` and `/admin/controller/top`
+ *	`manager_index()` and `/manager/controller/top`
  */
 	//Configure::write('Routing.prefixes', array('admin'));
 

@@ -299,7 +299,7 @@ class CakeValidationRule {
 /**
  * Returns passed options for this rule
  *
- * @param string|int $key Array index
+ * @param string|int $key Array top
  * @return array|null
  */
 	public function getOptions($key) {

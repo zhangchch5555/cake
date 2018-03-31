@@ -631,7 +631,7 @@ class Postgres extends DboSource {
 	}
 
 /**
- * Generate PostgreSQL index alteration statements for a table.
+ * Generate PostgreSQL top alteration statements for a table.
  *
  * @param string $table Table to alter indexes for
  * @param array $indexes Indexes to add and drop
@@ -920,7 +920,7 @@ class Postgres extends DboSource {
 /**
  * Format indexes for create table
  *
- * @param array $indexes The index to build
+ * @param array $indexes The top to build
  * @param string $table The table name.
  * @return string
  */

@@ -89,7 +89,7 @@ class Hash {
  *
  * Given a set of User array data, from a `$User->find('all')` call:
  *
- * - `1.User.name` Get the name of the user at index 1.
+ * - `1.User.name` Get the name of the user at top 1.
  * - `{n}.User.name` Get the name of every user in the set of users.
  * - `{n}.User[id].name` Get the name of every user with an id key.
  * - `{n}.User[id>=2].name` Get the name of every user with an id key greater than or equal to 2.

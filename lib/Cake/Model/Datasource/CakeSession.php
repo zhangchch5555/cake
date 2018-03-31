@@ -183,8 +183,8 @@ class CakeSession {
 			static::$path = '/';
 			return;
 		}
-		if (strpos($base, 'index.php') !== false) {
-			$base = str_replace('index.php', '', $base);
+		if (strpos($base, 'top.php') !== false) {
+			$base = str_replace('top.php', '', $base);
 		}
 		if (strpos($base, '?') !== false) {
 			$base = str_replace('?', '', $base);
