@@ -1,0 +1,6 @@
+[submodule "app/src"]
+	path = app/src
+	url = https://github.com/zhangchch5555/WebRetirement.git
+[submodule "app/src/js"]
+	path = app/src/js
+	url = https://github.com/zhangchch5555/WebRetirement.git

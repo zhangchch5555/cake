@@ -40,6 +40,14 @@ module.exports = {
                     { loader: "css-loader" },
                     { loader: "postcss-loader" }
                 ]
+            },
+            {
+                test: /\.js$/,
+                enforce: "pre",
+                exclude: /node_modules/,
+                use: [
+                    { loader: "eslint-loader" }
+                ]
             }
         ]
     }

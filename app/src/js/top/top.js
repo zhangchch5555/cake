@@ -1,8 +1,10 @@
 import Base from '../_base';
+import Swiper from 'swiper/dist/js/swiper.min.js';
+import 'swiper/dist/css/swiper.min.css';
 import '../../css/top/top.css';
 
 
-export default class Top extends Base {
+class Top extends Base {
     constructor(){
         super();
     }
@@ -12,14 +14,23 @@ export default class Top extends Base {
      */
     domLoad(e) {
         super.domLoad();
-        console.log("this top dom load");
+
+        new Swiper('.swiper-container', {
+            loop: true,
+            speed: 1000,
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
     }
 
     /**
      * load
      */
-    domLoad(e) {
-        super.domLoad();
-        console.log("this top load");
+    load(e) {
+        super.load();
     }
 }
+
+new Top();
